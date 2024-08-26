@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rak Buku Biasa</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+        }
+        div {
+            text-align: center;
+        }
+        ul {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rak Buku Biasa</h1>
+    <div>
+        <!-- memasukan input -->
+        <label>Judul Buku</label>
+        <input type="text" id="judulBuku">
+        <button id="tambah">tambah</button>
+
+        <!-- tempat menampilkan -->
+        <ul id="daftarBuku"></ul>
+    </div>
+
+    <script>
+        // ambil elemen yang diperlukan
+        const inputJudul = document.getElementById('judulBuku');
+        const tombolTambah = document.getElementById('tambah');
+        const daftarBuku = document.getElementById('daftarBuku');
+        const tombolHapus = document.getElementById('hapus');
+
+        // fungsi untuk menambahkan judul buku
+        function tambahBuku() {
+            const judul = inputJudul.value;
+            if (judul !== '') {
+                const li = document.createElement('li');
+                li.textContent = judul;
+                daftarBuku.appendChild(li);
+            }
+        }
+
+        // tambahkan event listener untuk tombol tambah
+        tombolTambah.addEventListener('click', tambahBuku);
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsep Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #181818;
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 15px 20px;
+            margin-left: -25px;
+            background-color: aquamarine;
+            border-radius: 10px;
+            cursor: pointer; 
+        }
+
+        div {
+            position: absolute;
+            right: 0;
+            top: 20%;
+            background-color: cadetblue;
+            width: 0;
+            height: 500px;
+            transition: width 0.3s ease; 
+        }
+
+        .active {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <span id="toggleButton">=</span>
+    <div id="menu"></div>
+
+    <script>
+        var toggleButton = document.getElementById('toggleButton');
+        var menu = document.getElementById('menu');
+
+        toggleButton.addEventListener('click', function() {
+            menu.classList.toggle('active'); // Toggle class 'active' untuk mengubah lebar
+        });
+    </script>
+</body>
+</html>
